@@ -49,6 +49,22 @@ WEEK           : Week number of the sale.
 ITEM           : Product code (links to DIM_PRODUCT).
 SALES_UNITS    : Number of units sold.
 SALES_VALUE    : Value of sales (currency).
-OTHER_METRICS  : Any additional sales metrics (e.g., discounts, returns, etc.).
 
-Note: In practice, FACT_SALES should be joined to DIM_CALENDAR using YEAR and WEEK, or preferably by mapping to the DATE anchor using the calendar table for unambiguous time alignment.
+
+==========================
+SALES_CONSOLIDATED
+==========================
+DATE                      : Calendar date of the sale (from DIM_CALENDAR).
+ITEM_CODE                 : Unique 13-digit product identifier from the sales system.
+TOTAL_UNIT_SALES          : Total number of units sold during the week.
+TOTAL_VALUE_SALES         : Total value of the units sold (currency).
+TOTAL_UNIT_AVG_WEEKLY_SALES : Store-level average weekly unit sales within the product category.
+REGION                    : Geographic sales region or coverage area.
+MANUFACTURER              : Name of the company that manufactures the product.
+BRAND                     : Product brand associated with the manufacturer.
+ITEM_DESCRIPTION          : Full descriptive label of the item sold.
+ID_CATEGORY               : Numeric category code used for reference or grouping.
+FORMAT                    : Product format or packaging (e.g., LIQUIDO, POLVO, GEL).
+ATTR1, ATTR2, ATTR3       : Product attribute tags used in segment mapping logic.
+CATEGORY                  : Standardized name of the product category (e.g., FABRIC TREATMENT & SANITIZERS).
+SEGMENT                   : Final product segment derived from format and attribute combinations (e.g., BLEACH, POWDER).
