@@ -1,15 +1,54 @@
 Data Descriptions of Processed Data
 Author: Katlyn Goeujon-Mackness
-Last Updated: 23/06/2025
+Last Updated: 25/06/2025
 
+==========================
+DIM_CALENDAR
+==========================
+DATE           : The anchor date for the week (typically Monday). Used for time-based joins.
+YEAR           : Calendar year (e.g., 2024).
+MONTH          : Calendar month as integer (1-12).
+WEEK           : Week identifier in XX-XX format (e.g., 01-01).
+WEEK_NUMBER    : Sequential week number within the year (1-53).
+QUARTER        : Calendar quarter (1-4).
 
----------------------------------------------
+==========================
+DIM_CATEGORY
+==========================
+CATEGORY       : Category code or name (standardized, e.g., "FABRIC TREATMENT & SANITIZERS").
+CATEGORY_ID    : Unique identifier for the category (if present).
 
-DIM_CALENDAR.csv
+==========================
+DIM_PRODUCT
+==========================
+ITEM           : Unique product code (string, padded to 13 digits).
+ITEM_DESCRIPTION: Description of the product.
+MANUFACTURER   : Name of the manufacturer.
+BRAND          : Brand name (e.g., "VANISH", "LYSOL").
+FORMAT         : Product format (e.g., "SPRAY", "POWDER").
+ATTR1          : Product attribute 1 (e.g., scent, size, or other feature).
+ATTR2          : Product attribute 2.
+ATTR3          : Product attribute 3.
+CATEGORY       : Category code (1-5), links to DIM_CATEGORY.
 
-WEEK: Human-friendly identifier comining the week number and year
-YEAR: Structured year listing
-MONTH: Structured month listing
-WEEK_NUMBER: Structured list of weeks of the year for aligning with sales cycles
-DATE: Start date that represents the given week (Monday)
+==========================
+DIM_SEGMENT
+==========================
+SEGMENT        : Segment name or code (e.g., "DISINFECTANTS").
+FORMAT         : Format of the segment (e.g., "SPRAY", "POWDER").
+ATTR1          : Segment attribute 1.
+ATTR2          : Segment attribute 2.
+ATTR3          : Segment attribute 3.
+CATEGORY       : Category code (1-5), links to DIM_CATEGORY.
 
+==========================
+FACT_SALES
+==========================
+YEAR           : Year of the sale.
+WEEK           : Week number of the sale.
+ITEM           : Product code (links to DIM_PRODUCT).
+SALES_UNITS    : Number of units sold.
+SALES_VALUE    : Value of sales (currency).
+OTHER_METRICS  : Any additional sales metrics (e.g., discounts, returns, etc.).
+
+Note: In practice, FACT_SALES should be joined to DIM_CALENDAR using YEAR and WEEK, or preferably by mapping to the DATE anchor using the calendar table for unambiguous time alignment.
