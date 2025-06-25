@@ -26,7 +26,7 @@ ITEM_DESCRIPTION: Description of the product.
 MANUFACTURER   : Name of the manufacturer.
 BRAND          : Brand name (e.g., "VANISH", "LYSOL").
 FORMAT         : Product format (e.g., "SPRAY", "POWDER").
-ATTR1          : Product attribute 1 (e.g., scent, size, or other feature).
+ATTR1          : Product attribute 1.
 ATTR2          : Product attribute 2.
 ATTR3          : Product attribute 3.
 CATEGORY       : Category code (1-5), links to DIM_CATEGORY.
