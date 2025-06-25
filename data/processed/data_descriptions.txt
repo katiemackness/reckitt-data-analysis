@@ -5,7 +5,7 @@ Last Updated: 25/06/2025
 ==========================
 DIM_CALENDAR
 ==========================
-DATE           : The anchor date for the week (typically Monday). Used for time-based joins.
+DATE           : The anchor date for the start of the week (Monday). Used for time-based joins.
 YEAR           : Calendar year (e.g., 2024).
 MONTH          : Calendar month as integer (1-12).
 WEEK           : Week identifier in XX-XX format (e.g., 01-01).
