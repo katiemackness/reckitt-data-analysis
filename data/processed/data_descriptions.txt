@@ -1,0 +1,15 @@
+Data Descriptions of Processed Data
+Author: Katlyn Goeujon-Mackness
+Last Updated: 23/06/2025
+
+
+---------------------------------------------
+
+DIM_CALENDAR.csv
+
+WEEK: Human-friendly identifier comining the week number and year
+YEAR: Structured year listing
+MONTH: Structured month listing
+WEEK_NUMBER: Structured list of weeks of the year for aligning with sales cycles
+DATE: Start date that represents the given week (Monday)
+
